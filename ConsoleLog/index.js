@@ -6,7 +6,7 @@ export default {
       console.log('This is a log from ConsoleLog');
       showToast('This is a toast from ConsoleLog');
     },
-    remove: () => {
+    onRemove: () => {
       console.log('ConsoleLog has been uninstalled');
       showToast('ConsoleLog has been uninstalled');
     },

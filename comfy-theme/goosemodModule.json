@@ -1,0 +1,11 @@
+{
+  "main": "index.js",
+
+  "name": "Comfy Theme Pure",
+  "description": "Direct port of NYRI4's Comfy Discord theme to GooseMod",
+  "tags": ["theme"],
+
+  "authors": ["265924886461939712", "186496078273708033"],
+
+  "version": "1.0.0"
+}

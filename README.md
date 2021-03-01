@@ -1,2 +1,3 @@
-# ModuleStore
+# Modules
+
 Our personal module store.

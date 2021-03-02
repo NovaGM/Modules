@@ -1,0 +1,11 @@
+{
+  "main": "index.js",
+
+  "name": "Module Settings Experiment",
+  "description": "Experiments with module settings",
+  "tags": ["test"],
+
+  "authors": ["186496078273708033"],
+
+  "version": "1.0.0"
+}

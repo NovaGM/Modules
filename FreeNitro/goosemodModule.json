@@ -1,0 +1,11 @@
+{
+  "main": "index.js",
+
+  "name": "FreeNitro",
+  "description": "Allows you to send emotes as URLs",
+  "tags": ["Nitro"],
+
+  "authors": ["189079074054995969"],
+
+  "version": "1.0.0"
+}

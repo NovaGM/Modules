@@ -1,9 +1,11 @@
-import {version} from './goosemodModule.json';
-
+import { createItem, removeItem } from '@goosemod/settings';
+import { version } from './goosemodModule.json';
+import { textInputField } from './custom-settings.js';
 
 let comfy;
 let vars;
 
+let settingsPage = "Comfy Theme";
 let settings;
 let defaultSettings = {
   usrbgXoff: "-180px",
@@ -99,12 +101,12 @@ export default {
   goosemodHandlers: {
     onImport: () => {
       comfy = document.createElement("style");
-      comfy.innerText = "@import url('https://nyri4.github.io/Comfy/support/comfy.theme.css')";
+      comfy.innerText = "@import url('https://nyri4.github.io/Comfy/betterdiscord/comfy.theme.css')";
       document.head.appendChild(comfy);
     },
 
     onLoadingFinished: () => {
-      goosemodScope.settings.createItem('Comfy Theme', [
+      createItem(settingsPage, [
         `(${version})`,
         {
           type: "header",
@@ -114,6 +116,19 @@ export default {
           type: "text",
           text: "USRBG modal x offset",
           subtext: `Default: ${defaultSettings.usrbgXoff}`,
+        },
+        {
+          type: "custom",
+          element: textInputField(
+            "USRBG modal x offset",
+            `Default: ${defaultSettings.usrbgXoff}`,
+            defaultSettings.usrbgXoff,
+            value => {
+              settings.usrbgXoff = value;
+              updateVars();
+            },
+            settings ? settings.usrbgXoff : ""
+          ),
         },
         {
           type: "text",
@@ -269,7 +284,7 @@ export default {
     },
 
     onRemove: () => {
-      goosemodScope.settings.removeItem("Comfy Theme");
+      removeItem(settingsPage);
 
       comfy.remove();
       vars.remove();

@@ -22,8 +22,7 @@ export function textInputField(text, subtext, placeholder, onApply, initialValue
   inputEl.classList.add('inputDefault-_djjkz', 'input-cIJ7To');
   inputEl.placeholder = placeholder;
   inputEl.type = 'text';
-  inputEl.value = initialValue ? initialValue : '';
-
+  
   inputWrapEl.appendChild(inputEl);
 
   // Button field
@@ -46,6 +45,16 @@ export function textInputField(text, subtext, placeholder, onApply, initialValue
   let dividerEl = document.createElement('div');
   dividerEl.classList.add('divider-3573oO', 'dividerDefault-3rvLe-');
   dividerEl.style.marginTop = subtext ? '20px' : '45px';
+
+  // Insertion checker
+  // A bit hacky...
+  // But works :)
+  let insertCheckId = setInterval(() => {
+    if (el.parentNode != null) {
+      inputEl.value = initialValue != undefined ? initialValue() : '';
+      clearInterval(insertCheckId);
+    }
+  }, 1000);
 
   el.appendChild(textEl);
   el.appendChild(buttonEl);

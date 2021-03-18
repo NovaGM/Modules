@@ -113,11 +113,6 @@ export default {
           text: "USRBG settings",
         },
         {
-          type: "text",
-          text: "USRBG modal x offset",
-          subtext: `Default: ${defaultSettings.usrbgXoff}`,
-        },
-        {
           type: "custom",
           element: textInputField(
             "USRBG modal x offset",
@@ -127,23 +122,47 @@ export default {
               settings.usrbgXoff = value;
               updateVars();
             },
-            settings ? settings.usrbgXoff : ""
+            () => settings.usrbgXoff,
           ),
         },
         {
-          type: "text",
-          text: "USRBG modal y offset",
-          subtext: `Default: ${defaultSettings.usrbgYoff}`,
+          type: "custom",
+          element: textInputField(
+            "USRBG modal y offset",
+            `Default: ${defaultSettings.usrbgYoff}`,
+            defaultSettings.usrbgYoff,
+            value => {
+              settings.usrbgYoff = value;
+              updateVars();
+            },
+            () => settings.usrbgYoff,
+          ),
         },
         {
-          type: "text",
-          text: "USRBG modal width",
-          subtext: `Default: ${defaultSettings.usrbgWidth}`,
+          type: "custom",
+          element: textInputField(
+            "USRBG modal width",
+            `Default: ${defaultSettings.usrbgWidth}`,
+            defaultSettings.usrbgWidth,
+            value => {
+              settings.usrbgWidth = value;
+              updateVars();
+            },
+            () => settings.usrbgWidth,
+          ),
         },
         {
-          type: "text",
-          text: "USRBG modal height",
-          subtext: `Default: ${defaultSettings.usrbgHeight}`,
+          type: "custom",
+          element: textInputField(
+            "USRBG modal height",
+            `Default: ${defaultSettings.usrbgHeight}`,
+            defaultSettings.usrbgHeight,
+            value => {
+              settings.usrbgHeight = value;
+              updateVars();
+            },
+            () => settings.usrbgHeight,
+          ),
         },
 
         {
@@ -151,19 +170,43 @@ export default {
           text: "User info settings (avatar, popout and modal)",
         },
         {
-          type: "text",
-          text: "Modal avatar roundness",
-          subtext: `Default: ${defaultSettings.modalAvatarRoundness}`,
+          type: "custom",
+          element: textInputField(
+            "Avatar roundness",
+            `Default: ${defaultSettings.modalAvatarRoundness}`,
+            defaultSettings.modalAvatarRoundness,
+            value => {
+              settings.modalAvatarRoundness = value;
+              updateVars();
+            },
+            () => settings.modalAvatarRoundness,
+          ),
         },
         {
-          type: "text",
-          text: "Modal avatar width",
-          subtext: `Default: ${defaultSettings.modalAvatarWidth}`,
+          type: "custom",
+          element: textInputField(
+            "Modal avatar width",
+            `Default: ${defaultSettings.modalAvatarWidth}`,
+            defaultSettings.modalAvatarWidth,
+            value => {
+              settings.modalAvatarWidth = value;
+              updateVars();
+            },
+            () => settings.modalAvatarWidth,
+          ),
         },
         {
-          type: "text",
-          text: "Popout role circles' size (0px to remove them)",
-          subtext: `Default: ${defaultSettings.popoutRoleCircles}`,
+          type: "custom",
+          element: textInputField(
+            "Popout role circles' size (0px to remove them)",
+            `Default: ${defaultSettings.popoutRoleCircles}`,
+            defaultSettings.popoutRoleCircles,
+            value => {
+              settings.popoutRoleCircles = value;
+              updateVars();
+            },
+            () => settings.popoutRoleCircles,
+          ),
         },
 
         {
@@ -171,9 +214,17 @@ export default {
           text: "Server list settings",
         },
         {
-          type: "text",
-          text: "Server icon roundness",
-          subtext: `Default: ${defaultSettings.serverIconRoundness}`,
+          type: "custom",
+          element: textInputField(
+            "Server icon roundness",
+            `Default: ${defaultSettings.serverIconRoundness}`,
+            defaultSettings.serverIconRoundness,
+            value => {
+              settings.serverIconRoundness = value;
+              updateVars();
+            },
+            () => settings.serverIconRoundness,
+          ),
         },
 
         {

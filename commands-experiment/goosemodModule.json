@@ -1,0 +1,11 @@
+{
+  "main": "index.js",
+
+  "name": "CommandsExperiment",
+  "description": "GooseMod commands experiment [requires GMv7.3.0 or higher]",
+  "tags": ["test"],
+
+  "authors": ["186496078273708033"],
+
+  "version": "1.0.0"
+}

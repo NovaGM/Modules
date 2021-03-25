@@ -1,0 +1,11 @@
+{
+  "main": "index.js",
+
+  "name": "SnowflakeInfo",
+  "description": "Returns info about a given snowflake.",
+  "tags": ["commands"],
+
+  "authors": ["717352467280691331"],
+
+  "version": "1.0.0"
+}

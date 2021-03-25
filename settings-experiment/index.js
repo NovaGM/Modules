@@ -6,6 +6,7 @@ import { textInputField } from './custom-settings.js';
 let settingsPage = "Settings Experiment";
 let settings;
 let defaultSettings = {
+  inputText: "Default value"
 };
 
 export default {
@@ -130,13 +131,26 @@ export default {
         {
           type: "custom",
           element: textInputField(
-            "Text Input",
+            "Text Input (static initial value)",
             "Prototype",
             "Placeholder",
             value => {
               showToast(`Text Input: ${value}`);
             },
-            "Preset value"
+            () => "Preset value"
+          )
+        },
+        {
+          type: "custom",
+          element: textInputField(
+            "Text Input (loading from and saving to settings)",
+            "Prototype",
+            "Placeholder",
+            value => {
+              showToast(`Text Input: ${value}`);
+              settings.inputText = value;
+            },
+            () => settings.inputText
           )
         }
       ]);

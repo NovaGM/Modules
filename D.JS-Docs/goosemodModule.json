@@ -1,0 +1,11 @@
+{
+  "main": "index.js",
+
+  "name": "Discord.JS Docs",
+  "description": "Queries the Discord.JS Documentation",
+  "tags": ["commands"],
+
+  "authors": ["465702500146610176"],
+
+  "version": "1.0.0"
+}

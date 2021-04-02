@@ -21,23 +21,6 @@ export default {
   goosemodHandlers: {
     onImport: () => {
       commands.add(
-        'echo',
-        "Prints out all of the message's text in an internal message.",
-        (args) => {
-          internalMessage(args.text[0].text);
-          console.log(args);
-        },
-        [
-          {
-            type: 3,
-            name: 'text',
-            description: 'Text to be printed in an internal message.',
-            required: true,
-          },
-        ],
-      );
-
-      commands.add(
         'docs',
         'Sends documentation about the specified query.',
         (args) => {
@@ -55,7 +38,7 @@ export default {
       );
     },
     onRemove: () => {
-      commands.remove('echo');
+      commands.remove('docs');
     },
   },
 };

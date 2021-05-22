@@ -110,6 +110,14 @@ export default {
           initialValue: () => "#000000"
         },
         {
+          type: "text-input",
+          text: "Text input",
+          initialValue: () => "Initial value",
+          oninput: value => {
+            showToast(`Text input: ${value}`);
+          },
+        },
+        {
           type: "custom",
           element: (() => {
             let e = document.createElement("span");

@@ -74,9 +74,7 @@ export default {
           }
         };
       };
-    },
 
-    onLoadingFinished: () => {
       createItem('FreeNitro', [
         version,
 

@@ -1,8 +1,14 @@
 import * as webpackModules from '@goosemod/webpack';
+import { createItem, removeItem } from '@goosemod/settings';
+import { version } from './goosemodModule.json';
 
 var searchHook;
 var parseHook;
 var useEmojiSelectHandlerHook;
+
+let settings = {
+  emojisize: '64',
+};
 
 const emojisModule = webpackModules.findByProps('getDisambiguatedEmojiContext', 'search');
 const messageEmojiParserModule = webpackModules.findByProps(
@@ -50,7 +56,7 @@ export default {
           for (let emoji of result.invalidEmojis) {
             result.content = result.content.replace(
               `<${emoji.animated ? 'a' : ''}:${emoji.originalName || emoji.name}:${emoji.id}>`,
-              `${emoji.url}&size=64&width=16`,
+              `${emoji.url}&size=${settings.emojisize}&width=16`,
             );
           }
           result.invalidEmojis = [];
@@ -68,12 +74,32 @@ export default {
           }
         };
       };
+
+      createItem('FreeNitro', [
+        version,
+
+        {
+          type: 'header',
+          text: 'Change the emoji size to your liking!',
+        },
+        {
+          type: 'text-input',
+          text: 'Emoji Size',
+          initialValue: () => settings.emojisize,
+          oninput: (value) => {
+            settings.emojisize = value;
+          },
+        },
+      ]);
     },
+
+    getSettings: () => [settings],
 
     onRemove: async () => {
       searchHook = originalFunctions.original_search;
       parseHook = originalFunctions.original_parse;
       useEmojiSelectHandlerHook = originalFunctions.original_useEmojiSelectHandler;
+      removeItem('FreeNitro');
     },
   },
 };

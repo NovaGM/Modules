@@ -1,5 +1,5 @@
 import * as webpackModules from '@goosemod/webpack';
-import { createItem, removeItem } from '@goosemod/settings'
+import { createItem, removeItem } from '@goosemod/settings';
 import { version } from './goosemodModule.json';
 
 var searchHook;
